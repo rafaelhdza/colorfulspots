@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> 
+        table, td, th { 
+         border: 1px solid #ddd; 
+         text-align: left; 
+        } 
+        table { 
+         border-collapse: collapse; 
+         width: 50%; 
+        } 
+        .table-data{ 
+         position: relative; 
+         left:150px; 
+         top:100px; 
+        } 
+        th, td { 
+         padding: 15px; 
+        } 
+        </style>
+  <title>Fetch using MySQL and Node.js</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class='heading'>
+            <h1>Locations</h1>
+          </div>
+
+    <table border="1">
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Address 1</th>
+            <th>Address 2</th>
+            <th>Phone</th>
+            
+        </tr>
+        
+        <%
+        if(BusinessData.length!=0){
+        var i=1;
+        BusinessData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.name %></td>
+            <td><%=data.address1 %></td>
+            <td><%=data.address2 %></td>
+            <td><%=data.phone %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
